@@ -1,4 +1,4 @@
-package script;
+package generic;
 
 
 import com.aventstack.extentreports.ExtentReports;
