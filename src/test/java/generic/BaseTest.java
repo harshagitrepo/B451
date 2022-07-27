@@ -24,7 +24,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import script.IAutoConst;
+
 
 public class BaseTest implements IAutoConst{
 	
