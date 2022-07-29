@@ -25,7 +25,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 public class BaseTest implements IAutoConst{
 	
 	public WebDriver driver;
@@ -119,6 +118,7 @@ public class BaseTest implements IAutoConst{
 		String testName=result.getName();
 		int testStatus= result.getStatus();
 		
+		
 		if(testStatus==1)
 		{
 			extentTest.log(Status.PASS, testName+" is pass");
@@ -137,7 +137,8 @@ public class BaseTest implements IAutoConst{
 					extentTest.log(Status.FAIL, e.getMessage());
 			}
 			extentTest.addScreenCaptureFromPath(SCREENSHOT_FOLDER_FOR_REPORT+testName+IMAGE_FORMAT);
-			extentTest.log(Status.FAIL, testName+" test is Failed");
+			String msg=result.getThrowable().getMessage();
+			extentTest.log(Status.FAIL, msg);
 		}
 		
 		extentTest.log(Status.INFO, "Close the browser");
